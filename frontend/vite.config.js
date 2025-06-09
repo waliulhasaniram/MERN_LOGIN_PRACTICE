@@ -9,9 +9,10 @@ export default defineConfig({
     tailwindcss(),
   ],
   resolve: {
-    // Enforce case-sensitive paths for Linux (Vercel)
-    preserveSymlinks: false,
-    caseSensitive: true,
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components')
+    }
   },
   server: {
     proxy: {
