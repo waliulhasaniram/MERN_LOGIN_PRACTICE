@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { useAuth } from "../../contextAPI/auth";
 
-export const Login = () => {
+const Login = () => {
     const api_link = import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
 
     const {storeAccessToken} = useAuth()
@@ -94,3 +94,5 @@ export const Login = () => {
     </div>
 );
 };
+
+export default Login;
