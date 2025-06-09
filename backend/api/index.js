@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser")
 const cors = require("cors")
 
 const corsOptions = {
-    origin: process.env.frontend_link,
+    origin: process.env.Frontend_URL,
     method: "GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS",
     credential : true
 }
