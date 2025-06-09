@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 
-export const Registration = () => {
+const Registration = () => {
     const api_link = import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
 
     const navigate = useNavigate()
@@ -112,3 +112,5 @@ export const Registration = () => {
     </div>
 );
 };
+
+export default Registration;
