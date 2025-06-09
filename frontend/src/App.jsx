@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
-import Home from "@components/Home"
-import Login from "@components/Login"
-import Logout from "@components/Logout"
-import Registration from "@components/registration"
+import Home from "./components/Home"
+import Login from "./components/Login"
+import Logout from "./components/Logout"
+import Registration from "./components/registration"
 
 function App() {
 
