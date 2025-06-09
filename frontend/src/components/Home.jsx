@@ -2,7 +2,7 @@ import { NavLink } from 'react-router'
 import { useAuth } from '../../contextAPI/auth'
 import { useEffect, useState } from 'react'
 
-export const Home =()=> {
+const Home =()=> {
     const {isLoggedIn, loggedInUser} = useAuth()
 
     const [updateUserData, setUpdateUserData] = useState({username:"", email:""})
@@ -47,3 +47,5 @@ export const Home =()=> {
   </div>
 );
 }
+
+export default Home;
