@@ -30,8 +30,3 @@ connectDB().then(()=>{
     console.log(`this is the server http://localhost:${PORT}`)
     })
 })
-
-app.listen(PORT);
-app.listen(() => {
-  console.log(`server run on port http://localhost:${PORT}`);
-});
