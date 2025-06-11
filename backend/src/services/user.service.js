@@ -2,11 +2,7 @@
 const UserData = require("../models/user.model");
 
 const createUser = async (userData) => {
-    try {
-        return await UserData.create(userData);
-    } catch (error) {
-        throw new Error(`User creation failed: ${error.message}`);
-    }
+    return await UserData.create(userData);
 };
 
 const findUserByEmail = async (email) => {
