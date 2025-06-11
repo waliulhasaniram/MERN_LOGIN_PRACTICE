@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { useAuth } from "../../contextAPI/auth";
+import Input from "./Input";
+import Button from "./Button";
 
 const Login = () => {
     const api_link = import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
@@ -47,38 +49,25 @@ const Login = () => {
             onSubmit={handelSubmit}
             className="w-full max-w-md bg-gray-800 p-8 rounded-lg shadow-2xl"
         >
-            <div className="mb-6">
-                <label className="flex justify-start text-gray-300 text-lg mb-2">Email:</label>
-                <input
-                    className="w-full px-4 py-3 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              <Input
+                    label="Email:"
                     type="email"
                     name="email"
                     placeholder="Enter your email"
-                    id="email"
                     value={loginData.email}
                     onChange={inputHandeler}
                     required
                 />
-            </div>
-            <div className="mb-6">
-                <label className="flex justify-start text-gray-300 text-lg mb-2">Password:</label>
-                <input
-                    className="w-full px-4 py-3 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                <Input
+                    label="Password:"
                     type="password"
                     name="password"
                     placeholder="Enter your password"
-                    id="password"
                     value={loginData.password}
                     onChange={inputHandeler}
                     required
                 />
-            </div>
-            <button
-                type="submit"
-                className="w-full py-3 bg-cyan-500 text-white font-bold rounded-md hover:bg-cyan-600 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            >
-                Login
-            </button>
+                  <Button type="submit"> Login </Button>
         </form>
 
         <div className="flex space-x-4 mt-6">

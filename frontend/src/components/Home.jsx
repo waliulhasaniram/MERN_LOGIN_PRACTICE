@@ -3,15 +3,15 @@ import { useAuth } from '../../contextAPI/auth'
 import { useEffect, useState } from 'react'
 
 const Home =()=> {
-    const {isLoggedIn, loggedInUser} = useAuth()
+    const {isLoggedIn, loggedInUser, loading} = useAuth()
+    //console.log(loggedInUser.email)
+    // const [updateUserData, setUpdateUserData] = useState({username:"", email:""})
 
-    const [updateUserData, setUpdateUserData] = useState({username:"", email:""})
-
-    useEffect(() => {
-        if (loggedInUser) {
-            setUpdateUserData({ username: loggedInUser.username, email: loggedInUser.email });
-        }
-    }, [loggedInUser]);
+    // useEffect(() => {
+    //     if (loggedInUser) {
+    //         setUpdateUserData({ username: loggedInUser.username, email: loggedInUser.email });
+    //     }
+    // }, [loggedInUser]);
 
     return (
   <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-gray-100">
@@ -19,15 +19,18 @@ const Home =()=> {
 
     <div className="w-full max-w-md bg-gray-800 shadow-lg rounded-lg p-6">
       {isLoggedIn ? (
-        <div className="space-y-4">
-          <p className="text-lg font-medium">Username: {updateUserData.username}</p>
-          <p className="text-lg font-medium">Email: {updateUserData.email}</p>
-          <NavLink to="/logout">
-            <button className="w-full py-2 px-4 bg-red-600 text-white rounded-md hover:bg-red-700">
-              Logout
-            </button>
-          </NavLink>
+        loading ? <></>:<>
+                <div className="space-y-4">
+                  <p className="text-lg font-medium">Username: {loggedInUser.username}</p>
+                  <p className="text-lg font-medium">Email: {loggedInUser.email}</p>
+                <NavLink to="/logout">
+                  <button className="w-full py-2 px-4 bg-red-600 text-white rounded-md hover:bg-red-700">
+                    Logout
+                  </button>
+                </NavLink>
         </div>
+        </>
+
       ) : (
         <div className="space-y-4">
           <NavLink to="/signup">
